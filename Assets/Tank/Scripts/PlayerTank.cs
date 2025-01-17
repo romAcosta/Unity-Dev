@@ -11,6 +11,7 @@ public class PlayerTank : MonoBehaviour, IDamagable
     [SerializeField] public int ammo = 10;
     [SerializeField] public int health = 10;
     [SerializeField] TMP_Text ammoText;
+    [SerializeField] TMP_Text healthText;
 
     private float torque;
     private float force;
@@ -34,6 +35,7 @@ public class PlayerTank : MonoBehaviour, IDamagable
             Instantiate(rocket, barrel.position + Vector3.up, barrel.rotation);
         }
         ammoText.text ="Ammo: " + ammo;
+        healthText.text = "Health: " + health;
     }
 
     void FixedUpdate()
