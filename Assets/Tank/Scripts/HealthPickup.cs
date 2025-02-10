@@ -15,7 +15,7 @@ public class HealthPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(other.TryGetComponent(out PlayerTank component)) component.health += healthAmount;
+            if(other.TryGetComponent(out Destructable component)) component.health += healthAmount;
             Destroy(gameObject);
             if (effect != null)
             {

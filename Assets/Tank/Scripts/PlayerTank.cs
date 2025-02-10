@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerTank : MonoBehaviour, IDamagable
 {
@@ -9,9 +10,9 @@ public class PlayerTank : MonoBehaviour, IDamagable
     [SerializeField] GameObject rocket;
     [SerializeField] Transform barrel;
     [SerializeField] public int ammo = 10;
-    [SerializeField] public int health = 10;
+    [SerializeField] public Destructable health;
     [SerializeField] TMP_Text ammoText;
-    [SerializeField] TMP_Text healthText;
+    [SerializeField] Slider healthSlider;
 
     private float torque;
     private float force;
@@ -35,7 +36,7 @@ public class PlayerTank : MonoBehaviour, IDamagable
             Instantiate(rocket, barrel.position + Vector3.up, barrel.rotation);
         }
         ammoText.text ="Ammo: " + ammo;
-        healthText.text = "Health: " + health;
+        healthSlider.value = health.health;
     }
 
     void FixedUpdate()

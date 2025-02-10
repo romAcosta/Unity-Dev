@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class Destructable : MonoBehaviour, IDamagable
 {
-    [SerializeField] float health = 10;
+    [SerializeField] public float health = 10;
     [SerializeField] GameObject deathEffect;
     private bool destroyed = false;
 
